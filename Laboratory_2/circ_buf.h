@@ -3,6 +3,7 @@
 #include <iostream>
 #include <array>
 #include <assert.h>
+#include <stdexcept>
 
 //В этой задаче для простоты не требуется делать контейнер шаблонным,
 //но это вполне допускается по желанию студента.
@@ -24,7 +25,9 @@ public:
 	CircularBuffer();
 	~CircularBuffer();
 	CircularBuffer(const CircularBuffer& cb);
-
+	////
+	CircularBuffer(CircularBuffer&& cb) noexcept;
+	////
 	//Конструирует буфер заданной ёмкости.
 	explicit CircularBuffer(int capacity);
 	//Конструирует буфер заданной ёмкости, целиком заполняет его элементом elem.
